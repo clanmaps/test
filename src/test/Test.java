@@ -178,22 +178,7 @@ public class Test {
 	    return null;
 	}
 	
-	private static int delete(String name) {
-	    Connection conn = getConn();
-	    int i = 0;
-	    String sql = "delete from students where Name='" + name + "'";
-	    PreparedStatement pstmt;
-	    try {
-	        pstmt = (PreparedStatement) conn.prepareStatement(sql);
-	        i = pstmt.executeUpdate();
-	        System.out.println("resutl: " + i);
-	        pstmt.close();
-	        conn.close();
-	    } catch (SQLException e) {
-	        e.printStackTrace();
-	    }
-	    return i;
-	}
+
 	
 	
 	
@@ -208,8 +193,7 @@ public class Test {
 	    Test.getAll();
 	    Test.update(new Student(2,"lisi", "male", 8));
 
-	    Test.delete("Achilles");
-	    Test.delete("Achilles1");
+
 	    Test.getAll();
 	    String sql;
 	    Connection conn = getConn();
